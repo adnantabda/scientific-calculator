@@ -1,0 +1,102 @@
+html{
+    font-size: 62.5%;
+}
+
+h1{
+
+}
+
+body{
+    height: 100vh;
+    background-image: linear-gradient( rgb(227, 227, 227) , rgb(170, 62, 62));
+    margin: 0 auto;
+    max-width: 1200rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.up-ds{
+    height: 2rem;
+    background-color: #393333;
+    width: 30rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 0.2px solid white;
+}
+
+.clc-body{
+    height: 40rem;
+    background-color: #393333;
+    width: 30rem;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.pls-holder{
+    height: 10px;
+}
+
+.output-ds{
+    margin-left: 25px;
+
+    height: 4rem;
+    width: 25rem;
+    background-color: #cee2e3;
+    border-radius: 5px;
+}
+
+p{
+    margin-top: 10px ;
+    margin: 0;
+    
+
+}
+
+.input-ds{
+    width: 27rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 2rem;
+    margin-left: 24px;
+    margin-top: 30px;
+    /* justify-items: center; */
+    /* place-items: center; */
+    /* margin-top: 30px; */
+}
+
+button{
+    color: black;
+    font-size: 15px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 3rem;
+    width: 5rem;
+    border-radius: 2px;
+    border: none;
+    text-align: center;
+
+}
+button:hover{
+    cursor: pointer;
+}
+button:active{
+    scale: 0.8;
+    cursor: pointer;
+}
+
+.radical{
+    font-size: 20px;
+}
+
+.clear{
+    background-color: #38ef0f;
+}
+
+.zero{
+    color: white;
+    background-color: rgb(255, 128, 0);
+}
