@@ -8,7 +8,7 @@ h1{
 
 body{
     height: 100vh;
-    background-image: linear-gradient( rgb(227, 227, 227) , rgb(170, 62, 62));
+    background-image: linear-gradient( rgb(227, 227, 227) , rgb(133, 112, 112));
     margin: 0 auto;
     max-width: 1200rem;
     display: flex;
@@ -41,6 +41,7 @@ body{
 
 .output-ds{
     margin-left: 25px;
+    overflow: hidden;
 
     height: 4rem;
     width: 25rem;
@@ -100,3 +101,21 @@ button:active{
     color: white;
     background-color: rgb(255, 128, 0);
 }
+
+footer{
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.equal{
+    background-color: rgb(186, 43, 43);
+}
+
+.streamer{
+    color: black;
+    font-size: 20px;
+    text-align:end;
+}
+
+
