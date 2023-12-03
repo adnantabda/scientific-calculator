@@ -1,32 +1,68 @@
 function add(a , b){
-    return a + b;
+    return Number(a) + Number(b);
 }
 
 function subtract(a , b){
-    return a - b;
+    return Number(a) - Number(b);
 
 }
 
 function multiply(a , b){
-    return a * b;
+    return Number(a) * Number(b);
 }
 
 
 function divide(a , b){
     if (b === 0){
-        return Infinity
+        alert("you can't Divide a number by zero")
+        return 0
     }
     else { 
-        let n = (a/b)
-        // n = n * 10000
-        // n = Math.round(n)/10000
+        let n = (Number(a)/Number(b))
+        n = n * 100
+        n = Math.round(n)/100
         return n;
     }
 }
 
+// ///////////////////////////////////////////////////////////////////////////////
+
 function percentage(firstOperand){
     return firstOperand / 100 
 }
+
+function square(firstOperand){
+    return firstOperand * firstOperand
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+// SPECIAL OPERATOR
+
+function logarithm(number){
+    return Map.log(number)
+
+}
+
+function absoluteValue(number){
+    return Math.abs(number)
+}
+
+function sin(number){
+    return Math.sin(number)
+}
+
+function cos(number){
+    return Math.cos(number)
+}
+
+
+function squareRoot(number){
+    return Math.sqrt(number)
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
 
 
 function operate(firstOperand , operator , secondOperand){
@@ -54,20 +90,22 @@ function operate(firstOperand , operator , secondOperand){
     }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////
+
 
 let firstOperand = '';
 let operator = '';
 let secondOperand = '';
-let displayValue = '' 
-
-
 
 
 let numbers = document.querySelectorAll(".number")
 let operatorTakers = document.querySelectorAll(".operator")
 let Display = document.querySelector(".streamer")
 let clear = document.querySelector(".clear")
+let equal = document.querySelector(".equal")
 let resultStreamer = document.querySelector(".result-streamer")
+let specialOperators = document.querySelectorAll(".special-operator")
+
 
 
 numbers.forEach((number)=>{
@@ -76,33 +114,63 @@ numbers.forEach((number)=>{
             if(operator == ""){
                 firstOperand += number.textContent
                 Display.textContent = firstOperand
-                if (Display.textContent == "")
-                {
-
-                }
             }
+///////////////////////////////////////////////////////////////////////////////////////////////
             else
-            {   Display.textContent = ""
-                secondOperand += number.textContent
-                Display.textContent += Display.textContent + secondOperand
-                resultStreamer.textContent = operate(firstOperand , operator , secondOperand)
+            {   
+                if(secondOperand)
+                {   
+                   secondOperand = secondOperand + number.textContent
+                   Display.textContent = firstOperand + operator + secondOperand
+                } 
+///////////////////////////////////////////////////////////////////////////////////// 
+                else{
+                    secondOperand = number.textContent
+                    Display.textContent = firstOperand + operator + secondOperand
+                }
             }
             console.log(firstOperand)
             console.log(secondOperand)
-        // Display.textContent = Display.textContent + number.textContent
     })
-}) 
+})
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 operatorTakers.forEach(operatorTaker =>{
     operatorTaker.addEventListener("click" , ()=>
-    {
-        operator += operatorTaker.textContent
-
-        Display.textContent += operator
-        console.log(operator)
-
+    { 
+        if(operator == "")
+        {
+            operator = operatorTaker.textContent
+            Display.textContent = operate(firstOperand,operator , secondOperand) + operator
+        }
+        else 
+        {
+            operator = operatorTaker.textContent
+            firstOperand = operate(firstOperand, operator , secondOperand)
+            secondOperand = ''
+            Display.textContent = Number(firstOperand) + operator            
+        }
+   
     })
 })
+
+
+specialOperators.forEach((specialOperator)=>{
+    specialOperator.addEventListener("click" , () =>
+    {
+        Display.style.fontSize = "12px"
+        Display.textContent = "Sorry: Special operators under Development"
+
+            })
+        })
+
+
+equal.addEventListener( "click", ()=>{
+    resultStreamer.textContent = operate(firstOperand , operator , secondOperand) 
+})
+
+
+
 
 
 
